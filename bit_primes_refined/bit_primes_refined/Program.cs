@@ -16,11 +16,7 @@ namespace bit_primes_refined
     {
         private static string BSieve(BitArray bArray)
         {
-            for (int i = 0; i < bArray.Length; i++)
-            {
-                bArray.Set(i, true);
-            }
-            ; /*this for loop sets everything  to true inside of the bit array*/
+            bArray.SetAll(true);
 
             bArray[0] = bArray[1] = false; //clever ;-) -> These wont be considered prime numbers
 
