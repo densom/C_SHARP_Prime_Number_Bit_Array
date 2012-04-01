@@ -5,6 +5,7 @@
  * */
 using System;
 using System.Collections;
+using System.Text;
 
 //make sure to include regular collections library
 
@@ -35,31 +36,31 @@ namespace bit_primes_refined
             }
 
 
-            string primeStringOutput = ""; //string variable
+            var primeStringOutput = new StringBuilder(); //string variable
             ushort quickCounter = 0; //a quick counter variable
 
             for (int i = 0; i < bArray.Length; i++) //this iteration creates the string
             {
                 if (bArray[i]) //if true then increase the quick counter and append the main output string
                 {
-                    primeStringOutput += i.ToString();
+                    primeStringOutput.Append(i.ToString());
                     quickCounter++;
 
                     if (quickCounter == 7)
                     {
-                        primeStringOutput += "\n";
+                        primeStringOutput.Append("\n");
                         quickCounter = 0;
                     } //if true then create a new line and reset the counter
                     else
                     {
-                        primeStringOutput += "\t";
+                        primeStringOutput.Append("\t");
                     }
                     ; //else just tab each numeric character
                 }
             }
 
 
-            return primeStringOutput; //returns string at very end
+            return primeStringOutput.ToString(); //returns string at very end
         }
 
         private static void Main(string[] args)
